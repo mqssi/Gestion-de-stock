@@ -105,11 +105,11 @@
             // lblTitre
             // 
             this.lblTitre.AutoSize = true;
-            this.lblTitre.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitre.Font = new System.Drawing.Font("Montserrat", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitre.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lblTitre.Location = new System.Drawing.Point(90, 22);
             this.lblTitre.Name = "lblTitre";
-            this.lblTitre.Size = new System.Drawing.Size(223, 37);
+            this.lblTitre.Size = new System.Drawing.Size(244, 38);
             this.lblTitre.TabIndex = 3;
             this.lblTitre.Text = "Ajouter Client";
             // 
@@ -371,6 +371,7 @@
             // btnQuitter
             // 
             this.btnQuitter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.btnQuitter.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
             this.btnQuitter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnQuitter.Image = global::GestionDeStock.Properties.Resources.Button_Delete_icon;
             this.btnQuitter.Location = new System.Drawing.Point(750, 9);

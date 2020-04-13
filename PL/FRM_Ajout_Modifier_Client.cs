@@ -353,5 +353,7 @@ namespace GestionDeStock.PL
             txtPrenom.Text = "Prénom du Client";txtPrenom.ForeColor = Color.Silver;
 
         }
+
+
     }
 }

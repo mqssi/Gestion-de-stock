@@ -55,5 +55,20 @@ namespace GestionDeStock.PL
                 txtRechercher.ForeColor = Color.Black;
             }
         }
+
+        private void bntAjouterProduit_Click(object sender, EventArgs e)
+        {
+            PL.FRM_Ajouter_Modifier_Produit frmProduit = new PL.FRM_Ajouter_Modifier_Produit();
+            frmProduit.ShowDialog();
+        }
+
+        private void btnModifierProduit_Click(object sender, EventArgs e)
+        {
+            PL.FRM_Ajouter_Modifier_Produit frmProduit = new PL.FRM_Ajouter_Modifier_Produit();
+            frmProduit.lblTitre.Text = "Modifier Produit";
+            frmProduit.btnActualiser.Visible = false;
+            frmProduit.ShowDialog();
+
+        }
     }
 }

@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="BL\CLS_Client.cs" />
     <Compile Include="BL\CLS_Connexion.cs" />
+    <Compile Include="BL\CLS_Produit.cs" />
     <Compile Include="Categorie.cs">
       <DependentUpon>DbStock.tt</DependentUpon>
     </Compile>
@@ -83,6 +84,12 @@
     </Compile>
     <Compile Include="Details_Commande.cs">
       <DependentUpon>DbStock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_Ajouter_Modifier_Produit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Ajouter_Modifier_Produit.Designer.cs">
+      <DependentUpon>FRM_Ajouter_Modifier_Produit.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\FRM_Ajout_Modifier_Client.cs">
       <SubType>Form</SubType>
@@ -122,6 +129,9 @@
     <Compile Include="Utilisateur.cs">
       <DependentUpon>DbStock.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="PL\FRM_Ajouter_Modifier_Produit.resx">
+      <DependentUpon>FRM_Ajouter_Modifier_Produit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Ajout_Modifier_Client.resx">
       <DependentUpon>FRM_Ajout_Modifier_Client.cs</DependentUpon>
     </EmbeddedResource>
