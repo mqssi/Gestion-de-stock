@@ -279,7 +279,7 @@ namespace GestionDeStock.PL
             foreach(var l in listeRecherche)
             {
 
-                dgvClient.Rows.Add(false, l.ID_CLIENT, l.Nom_Client, l.Prenom_Client, l.Adresse_Client, l.Telephone_Client, l.Email_Client,  l.Ville_Client, l.Pays_Client);
+                dgvClient.Rows.Add(false, l.ID_CLIENT, l.Nom_Client, l.Prenom_Client, l.Adresse_Client, l.Telephone_Client, l.Email_Client,  l.Pays_Client, l.Ville_Client);
 
             }
 

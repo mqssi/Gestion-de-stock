@@ -108,6 +108,12 @@
     <Compile Include="PL\USER_Liste_Client.Designer.cs">
       <DependentUpon>USER_Liste_Client.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\USER_Liste_Produit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PL\USER_Liste_Produit.Designer.cs">
+      <DependentUpon>USER_Liste_Produit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Produit.cs">
       <DependentUpon>DbStock.tt</DependentUpon>
     </Compile>
@@ -127,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\USER_Liste_Client.resx">
       <DependentUpon>USER_Liste_Client.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\USER_Liste_Produit.resx">
+      <DependentUpon>USER_Liste_Produit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
