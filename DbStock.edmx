@@ -23,6 +23,7 @@
           <Property Name="Telephone_Client" Type="nvarchar" MaxLength="250" Nullable="false" />
           <Property Name="Ville_Client" Type="nvarchar" MaxLength="250" Nullable="false" />
           <Property Name="Email_Client" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="Pays_Client" Type="nvarchar" MaxLength="250" Nullable="false" />
         </EntityType>
         <EntityType Name="Commande">
           <Key>
@@ -195,6 +196,7 @@ avertissement 6002: La table/vue 'GESTION_DE_STOCK.dbo.Details_Commande' n'a pas
           <Property Name="Telephone_Client" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="Ville_Client" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="Email_Client" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Pays_Client" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Commandes" Relationship="GESTION_DE_STOCKModel.FK_Commande_Client" FromRole="Client" ToRole="Commande" />
         </EntityType>
         <EntityType Name="Commande">
@@ -295,7 +297,7 @@ avertissement 6002: La table/vue 'GESTION_DE_STOCK.dbo.Details_Commande' n'a pas
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -312,6 +314,7 @@ avertissement 6002: La table/vue 'GESTION_DE_STOCK.dbo.Details_Commande' n'a pas
           <EntitySetMapping Name="Clients">
             <EntityTypeMapping TypeName="GESTION_DE_STOCKModel.Client">
               <MappingFragment StoreEntitySet="Client">
+                <ScalarProperty Name="Pays_Client" ColumnName="Pays_Client" />
                 <ScalarProperty Name="Email_Client" ColumnName="Email_Client" />
                 <ScalarProperty Name="Ville_Client" ColumnName="Ville_Client" />
                 <ScalarProperty Name="Telephone_Client" ColumnName="Telephone_Client" />

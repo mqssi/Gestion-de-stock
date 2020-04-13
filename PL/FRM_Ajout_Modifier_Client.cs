@@ -14,9 +14,14 @@ namespace GestionDeStock.PL
 {
     public partial class FRM_Ajout_Modifier_Client : Form
     {
-        public FRM_Ajout_Modifier_Client()
+
+        private UserControl usClient;
+        
+        
+        public FRM_Ajout_Modifier_Client(UserControl userC)
         {
             InitializeComponent();
+            this.usClient = userC;
         }
 
         //TEST Obligatoires
@@ -274,6 +279,10 @@ namespace GestionDeStock.PL
 
         }
 
+
+        public int IDselect;
+
+
         private void btnEnregistrer_Click(object sender, EventArgs e)
         {
             if (testObligatoire() != null)
@@ -281,6 +290,55 @@ namespace GestionDeStock.PL
 
                 MessageBox.Show(testObligatoire(),"Obligatoire",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
+
+            else if(lblTitre.Text=="Ajouter Client")
+            {
+
+                BL.CLS_Client clclient = new BL.CLS_Client();
+
+                if (clclient.Ajouter_Client(txtNom.Text, txtPrenom.Text, txtAdresse.Text,txtTelephone.Text, txtMail.Text, txtPays.Text, txtVille.Text)==true)
+                {
+                    MessageBox.Show("Client ajouté avec succès", "Ajouter", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    (usClient as USER_Liste_Client).ActualiserDatagrid();
+
+                }
+                else
+                {
+
+                    MessageBox.Show("Nom et Prénom de client déja existant", "Ajouter", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+
+            }
+            else // si lblTitre = " Modifier Client"
+            {
+                BL.CLS_Client clClient = new BL.CLS_Client();
+
+
+                DialogResult R = MessageBox.Show("Voulez-vous vraiment modifier le client", "Modification", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (R == DialogResult.Yes)
+                {
+
+                    clClient.ModifierClient(IDselect, txtNom.Text, txtPrenom.Text, txtAdresse.Text, txtTelephone.Text, txtMail.Text, txtPays.Text, txtVille.Text);
+
+
+                    //Pour actualiser la grille
+                    (usClient as USER_Liste_Client).ActualiserDatagrid();
+                    MessageBox.Show("Client Modifié avec succès", "Modification", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+
+                }
+                else
+                {
+                    MessageBox.Show("Modification annulée", "Modification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                }
+
+
+            
+            }
+
+
         }
 
         private void btnActualiser_Click(object sender, EventArgs e)

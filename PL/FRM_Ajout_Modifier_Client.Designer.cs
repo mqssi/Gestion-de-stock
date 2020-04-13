@@ -437,30 +437,30 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox txtNom;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.TextBox txtPrenom;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.TextBox txtTelephone;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.TextBox txtMail;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.TextBox txtVille;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.TextBox txtPays;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.TextBox txtAdresse;
         private System.Windows.Forms.Button btnEnregistrer;
         private System.Windows.Forms.Button btnQuitter;
         public System.Windows.Forms.Label lblTitre;
         public System.Windows.Forms.Button btnActualiser;
+        public System.Windows.Forms.TextBox txtNom;
+        public System.Windows.Forms.TextBox txtPrenom;
+        public System.Windows.Forms.TextBox txtTelephone;
+        public System.Windows.Forms.TextBox txtMail;
+        public System.Windows.Forms.TextBox txtVille;
+        public System.Windows.Forms.TextBox txtPays;
+        public System.Windows.Forms.TextBox txtAdresse;
     }
 }

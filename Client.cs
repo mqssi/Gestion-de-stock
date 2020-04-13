@@ -27,6 +27,7 @@ namespace GestionDeStock
         public string Telephone_Client { get; set; }
         public string Ville_Client { get; set; }
         public string Email_Client { get; set; }
+        public string Pays_Client { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Commande> Commandes { get; set; }

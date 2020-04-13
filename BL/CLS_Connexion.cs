@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GestionDeStock.BL
 {
-    class CLS_Connexion
+    public class CLS_Connexion
     {
         //vérif connexion
 
