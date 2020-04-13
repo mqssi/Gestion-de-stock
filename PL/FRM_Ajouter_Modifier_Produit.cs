@@ -17,10 +17,12 @@ namespace GestionDeStock.PL
 
 
         private dbStockContext db;
-        public FRM_Ajouter_Modifier_Produit()
+        private UserControl userProduit;
+        public FRM_Ajouter_Modifier_Produit(UserControl User)
         {
             InitializeComponent();
             db = new dbStockContext();
+            this.userProduit = User;
             // Afficher les catégories
             comboCategorie.DataSource = db.Categories.ToList();
             comboCategorie.DisplayMember = "Nom_Categorie";
@@ -213,7 +215,7 @@ namespace GestionDeStock.PL
                     if (clprod.ajouterProduit(txtNomProduit.Text, int.Parse(txtQuantiteProduit.Text),txtPrixProduit.Text, byteimageP, Convert.ToInt32(comboCategorie.SelectedValue)) ==true)
                     {
                         MessageBox.Show("Produit ajouté avec succes", "Ajouter", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-
+                        (userProduit as USER_Liste_Produit).actualiserDgv();
                     }
                     else
                     {

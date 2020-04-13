@@ -46,6 +46,33 @@ namespace GestionDeStock.PL
             db = new dbStockContext();
         }
 
+
+
+
+        public void actualiserDgv ()
+        {
+            db = new dbStockContext();
+            dgvProduit.Rows.Clear();
+
+            Categorie Cat = new Categorie();
+
+            foreach(var Lis in db.Produits)
+            {
+
+                Cat = db.Categories.SingleOrDefault(s => s.ID_CATEGORIE == Lis.ID_CATEGORIE); // si le idcatergorie dans produit = idcatergorie dans categorie
+                if (Cat != null) //s'il existe
+                {
+                    dgvProduit.Rows.Add(false, Lis.ID_PRODUIT, Lis.Nom_Produit, Lis.Quantite_Produit, Lis.Prix_Produit, Cat.Nom_Categorie); //cat.nom_categorie pour afficher le nom catergorie
+
+                }
+
+            }
+
+
+        }
+
+
+
         private void txtRechercher_Enter(object sender, EventArgs e)
         {
             if (txtRechercher.Text == "Rechercher")
@@ -58,17 +85,22 @@ namespace GestionDeStock.PL
 
         private void bntAjouterProduit_Click(object sender, EventArgs e)
         {
-            PL.FRM_Ajouter_Modifier_Produit frmProduit = new PL.FRM_Ajouter_Modifier_Produit();
+            PL.FRM_Ajouter_Modifier_Produit frmProduit = new PL.FRM_Ajouter_Modifier_Produit(this);
             frmProduit.ShowDialog();
         }
 
         private void btnModifierProduit_Click(object sender, EventArgs e)
         {
-            PL.FRM_Ajouter_Modifier_Produit frmProduit = new PL.FRM_Ajouter_Modifier_Produit();
+            PL.FRM_Ajouter_Modifier_Produit frmProduit = new PL.FRM_Ajouter_Modifier_Produit(this);
             frmProduit.lblTitre.Text = "Modifier Produit";
             frmProduit.btnActualiser.Visible = false;
             frmProduit.ShowDialog();
 
+        }
+
+        private void USER_Liste_Produit_Load(object sender, EventArgs e)
+        {
+            actualiserDgv();
         }
     }
 }
