@@ -37,6 +37,8 @@ namespace GestionDeStock.PL
         {
             InitializeComponent();
             db = new dbStockContext();
+            //désactiver la fonction rechercher
+            txtRechercher.Enabled = false;
         }
 
         // ajout dans DataGridView
@@ -217,6 +219,72 @@ namespace GestionDeStock.PL
 
             }
         }
+
+
+
+
+
+        private void comboRechercher_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //activer le textbox recherche si j'ia choisi un champ
+
+            txtRechercher.Enabled = true;
+            txtRechercher.Text = "";
+        }
+
+
+        private void txtRechercher_TextChanged(object sender, EventArgs e)
+        {
+
+            db = new dbStockContext();
+            var listeRecherche = db.Clients.ToList(); // listeRecherche = liste des clients
+            if(txtRechercher.Text!="")// Pas vide
+            {
+
+                switch (comboRechercher.Text)
+                {
+
+
+                    case "Nom":
+                        listeRecherche = listeRecherche.Where(s => s.Nom_Client.IndexOf(txtRechercher.Text, StringComparison.CurrentCultureIgnoreCase) != -1).ToList();
+                        //  StringComparison.CurrentCultureIgnoreCase 1ère lettre majuscule ou minuscule 
+                        // !=-1 dans la base de données
+                        break;
+                    case "Prénom":
+                        listeRecherche = listeRecherche.Where(s => s.Prenom_Client.IndexOf(txtRechercher.Text, StringComparison.CurrentCultureIgnoreCase) != -1).ToList();
+                        break;
+                    case "Téléphone":
+                        listeRecherche = listeRecherche.Where(s => s.Telephone_Client.IndexOf(txtRechercher.Text, StringComparison.CurrentCultureIgnoreCase) != -1).ToList();
+                        break;
+                    case "Email":
+                        listeRecherche = listeRecherche.Where(s => s.Email_Client.IndexOf(txtRechercher.Text, StringComparison.CurrentCultureIgnoreCase) != -1).ToList();
+                        break;
+                    case "Ville":
+                        listeRecherche = listeRecherche.Where(s => s.Ville_Client.IndexOf(txtRechercher.Text, StringComparison.CurrentCultureIgnoreCase) != -1).ToList();
+                        break;
+                    case "Pays":
+                        listeRecherche = listeRecherche.Where(s => s.Pays_Client.IndexOf(txtRechercher.Text, StringComparison.CurrentCultureIgnoreCase) != -1).ToList();
+                        break;
+                   
+
+                }
+
+
+            }
+            
+            //Vider la grille
+            dgvClient.Rows.Clear();
+
+            // ajouter listeRechercher dans la dgvClient
+            foreach(var l in listeRecherche)
+            {
+
+                dgvClient.Rows.Add(false, l.ID_CLIENT, l.Nom_Client, l.Prenom_Client, l.Adresse_Client, l.Telephone_Client, l.Email_Client,  l.Ville_Client, l.Pays_Client);
+
+            }
+
+        }
+
 
     }
 }

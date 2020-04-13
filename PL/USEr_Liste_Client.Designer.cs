@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bntAjoutclient = new System.Windows.Forms.Button();
             this.btnModifclient = new System.Windows.Forms.Button();
             this.btnSuprimmerclient = new System.Windows.Forms.Button();
@@ -37,7 +37,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtRechercher = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboRechercher = new System.Windows.Forms.ComboBox();
             this.dgvClient = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,8 +46,8 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClient)).BeginInit();
             this.SuspendLayout();
             // 
@@ -137,6 +137,7 @@
             this.txtRechercher.TabIndex = 5;
             this.txtRechercher.Text = "Rechercher";
             this.txtRechercher.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtRechercher.TextChanged += new System.EventHandler(this.txtRechercher_TextChanged);
             this.txtRechercher.Enter += new System.EventHandler(this.txtRechercher_Enter);
             // 
             // panel3
@@ -147,22 +148,23 @@
             this.panel3.Size = new System.Drawing.Size(237, 3);
             this.panel3.TabIndex = 6;
             // 
-            // comboBox1
+            // comboRechercher
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Nom ",
+            this.comboRechercher.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboRechercher.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboRechercher.FormattingEnabled = true;
+            this.comboRechercher.Items.AddRange(new object[] {
+            "Nom",
             "Prénom",
             "Téléphone",
             "Email",
             "Ville",
             "Pays"});
-            this.comboBox1.Location = new System.Drawing.Point(371, 139);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(295, 33);
-            this.comboBox1.TabIndex = 7;
+            this.comboRechercher.Location = new System.Drawing.Point(371, 139);
+            this.comboRechercher.Name = "comboRechercher";
+            this.comboRechercher.Size = new System.Drawing.Size(295, 33);
+            this.comboRechercher.TabIndex = 7;
+            this.comboRechercher.SelectedIndexChanged += new System.EventHandler(this.comboRechercher_SelectedIndexChanged);
             // 
             // dgvClient
             // 
@@ -173,14 +175,14 @@
             this.dgvClient.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvClient.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvClient.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvClient.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvClient.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvClient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClient.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -190,16 +192,16 @@
             this.Column4,
             this.Column5,
             this.Column9,
-            this.Column6,
-            this.Column7});
+            this.Column7,
+            this.Column6});
             this.dgvClient.EnableHeadersVisualStyles = false;
             this.dgvClient.Location = new System.Drawing.Point(3, 203);
             this.dgvClient.Name = "dgvClient";
             this.dgvClient.RowHeadersVisible = false;
             this.dgvClient.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvClient.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvClient.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvClient.Size = new System.Drawing.Size(1405, 399);
             this.dgvClient.TabIndex = 8;
             // 
@@ -242,24 +244,24 @@
             this.Column9.HeaderText = "Email";
             this.Column9.Name = "Column9";
             // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Ville";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
             // Column7
             // 
             this.Column7.HeaderText = "Pays";
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
             // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Ville";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            // 
             // USER_Liste_Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dgvClient);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboRechercher);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.txtRechercher);
             this.Controls.Add(this.panel2);
@@ -285,7 +287,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtRechercher;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboRechercher;
         private System.Windows.Forms.DataGridView dgvClient;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
@@ -294,7 +296,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
     }
 }
