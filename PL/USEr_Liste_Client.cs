@@ -154,5 +154,69 @@ namespace GestionDeStock.PL
 
 
         }
+
+        private void btnSuprimmerclient_Click(object sender, EventArgs e)
+        {
+            BL.CLS_Client clClient = new BL.CLS_Client();
+            
+            
+            // pour delete tous les clients selectionnés
+            int select = 0;
+
+            for (int i = 0; i < dgvClient.Rows.Count; i++)
+            {
+
+                if ((bool)dgvClient.Rows[i].Cells[0].Value == true)
+                {
+
+                    select++;
+                }
+            }
+
+
+            if (select == 0)
+            {
+                MessageBox.Show("Aucun client selectionné", "Suppression", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+
+                DialogResult R =  MessageBox.Show("Voulez-vous vraiment supprimer ?", "Suppression", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+
+                if (R == DialogResult.Yes)
+                {
+
+
+                    //pour delete tous les clients modifiés
+
+                    for (int i = 0; i < dgvClient.Rows.Count; i++)
+                    {
+
+                        if ((bool)dgvClient.Rows[i].Cells[0].Value == true)
+                        {
+
+                            clClient.SupprimerClient(int.Parse(dgvClient.Rows[i].Cells[1].Value.ToString())); //id client
+                        }
+                    }
+
+                    //Actuliser la grille une fois le client supprimé
+                    ActualiserDatagrid();
+
+                    MessageBox.Show("Suppression effectuée", "Suppression", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+                }
+                else
+                {
+                    MessageBox.Show("Suppression annulée", "Suppression", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                }
+               
+
+
+            }
+        }
+
     }
 }

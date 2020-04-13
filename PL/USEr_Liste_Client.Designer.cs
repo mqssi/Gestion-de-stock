@@ -102,6 +102,7 @@
             this.btnSuprimmerclient.TabIndex = 2;
             this.btnSuprimmerclient.Text = "Supprimer";
             this.btnSuprimmerclient.UseVisualStyleBackColor = false;
+            this.btnSuprimmerclient.Click += new System.EventHandler(this.btnSuprimmerclient_Click);
             // 
             // panel1
             // 

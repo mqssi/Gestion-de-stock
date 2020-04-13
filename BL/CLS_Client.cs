@@ -59,5 +59,20 @@ namespace GestionDeStock.BL
             }
         }
 
+        public void SupprimerClient(int id)
+        {
+
+            C = new Client();
+            C = db.Clients.SingleOrDefault(s => s.ID_CLIENT == id);
+            if (C != null) //existe
+            {
+
+                db.Clients.Remove(C); // pour delete le client
+                db.SaveChanges();
+
+            }
+
+        }
+
     }
 }
