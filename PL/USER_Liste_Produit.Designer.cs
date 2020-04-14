@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvProduit = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -37,7 +37,6 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboRechercher = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtRechercher = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -61,14 +60,14 @@
             this.dgvProduit.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvProduit.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvProduit.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProduit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProduit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvProduit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProduit.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -82,9 +81,9 @@
             this.dgvProduit.Name = "dgvProduit";
             this.dgvProduit.RowHeadersVisible = false;
             this.dgvProduit.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvProduit.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvProduit.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvProduit.Size = new System.Drawing.Size(1405, 327);
             this.dgvProduit.TabIndex = 17;
             // 
@@ -118,27 +117,12 @@
             this.Column5.HeaderText = "Catégorie";
             this.Column5.Name = "Column5";
             // 
-            // comboRechercher
-            // 
-            this.comboRechercher.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboRechercher.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboRechercher.FormattingEnabled = true;
-            this.comboRechercher.Items.AddRange(new object[] {
-            "Nom",
-            "Quantité",
-            "Prix",
-            "Catégorie"});
-            this.comboRechercher.Location = new System.Drawing.Point(371, 116);
-            this.comboRechercher.Name = "comboRechercher";
-            this.comboRechercher.Size = new System.Drawing.Size(295, 33);
-            this.comboRechercher.TabIndex = 16;
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.panel3.Location = new System.Drawing.Point(785, 146);
+            this.panel3.Location = new System.Drawing.Point(344, 144);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(237, 3);
+            this.panel3.Size = new System.Drawing.Size(849, 2);
             this.panel3.TabIndex = 15;
             // 
             // txtRechercher
@@ -147,13 +131,14 @@
             this.txtRechercher.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtRechercher.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRechercher.ForeColor = System.Drawing.Color.DimGray;
-            this.txtRechercher.Location = new System.Drawing.Point(785, 110);
+            this.txtRechercher.Location = new System.Drawing.Point(344, 107);
             this.txtRechercher.Multiline = true;
             this.txtRechercher.Name = "txtRechercher";
-            this.txtRechercher.Size = new System.Drawing.Size(237, 39);
+            this.txtRechercher.Size = new System.Drawing.Size(879, 39);
             this.txtRechercher.TabIndex = 14;
             this.txtRechercher.Text = "Rechercher";
             this.txtRechercher.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtRechercher.TextChanged += new System.EventHandler(this.txtRechercher_TextChanged);
             this.txtRechercher.Enter += new System.EventHandler(this.txtRechercher_Enter);
             // 
             // panel2
@@ -186,7 +171,7 @@
             this.btnSuprimmerProduit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnSuprimmerProduit.Image = global::GestionDeStock.Properties.Resources.Close_2_icon;
             this.btnSuprimmerProduit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSuprimmerProduit.Location = new System.Drawing.Point(642, 17);
+            this.btnSuprimmerProduit.Location = new System.Drawing.Point(730, 17);
             this.btnSuprimmerProduit.Name = "btnSuprimmerProduit";
             this.btnSuprimmerProduit.Size = new System.Drawing.Size(228, 52);
             this.btnSuprimmerProduit.TabIndex = 11;
@@ -204,7 +189,7 @@
             this.btnModifierProduit.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnModifierProduit.Image = global::GestionDeStock.Properties.Resources.Recycle_iconaaa;
             this.btnModifierProduit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModifierProduit.Location = new System.Drawing.Point(359, 17);
+            this.btnModifierProduit.Location = new System.Drawing.Point(402, 17);
             this.btnModifierProduit.Name = "btnModifierProduit";
             this.btnModifierProduit.Size = new System.Drawing.Size(233, 52);
             this.btnModifierProduit.TabIndex = 10;
@@ -239,7 +224,7 @@
             this.btnAfficherPhoto.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnAfficherPhoto.Image = global::GestionDeStock.Properties.Resources.Pictures_icon;
             this.btnAfficherPhoto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAfficherPhoto.Location = new System.Drawing.Point(928, 17);
+            this.btnAfficherPhoto.Location = new System.Drawing.Point(1058, 17);
             this.btnAfficherPhoto.Name = "btnAfficherPhoto";
             this.btnAfficherPhoto.Size = new System.Drawing.Size(259, 52);
             this.btnAfficherPhoto.TabIndex = 18;
@@ -307,7 +292,6 @@
             this.Controls.Add(this.bntImprimer);
             this.Controls.Add(this.btnAfficherPhoto);
             this.Controls.Add(this.dgvProduit);
-            this.Controls.Add(this.comboRechercher);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.txtRechercher);
             this.Controls.Add(this.panel2);
@@ -327,7 +311,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvProduit;
-        private System.Windows.Forms.ComboBox comboRechercher;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox txtRechercher;
         private System.Windows.Forms.Panel panel2;

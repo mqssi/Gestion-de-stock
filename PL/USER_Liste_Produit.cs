@@ -271,5 +271,32 @@ namespace GestionDeStock.PL
 
 
         }
+
+        private void txtRechercher_TextChanged(object sender, EventArgs e)
+        {
+
+            db = new dbStockContext();
+            var listeRecherche = db.Produits.ToList(); // listeRecherche = liste des clients
+            Categorie cat = new Categorie();
+            listeRecherche = listeRecherche.Where(s => s.Nom_Produit.IndexOf(txtRechercher.Text, StringComparison.CurrentCultureIgnoreCase) != -1).ToList();
+              //  StringComparison.CurrentCultureIgnoreCase 1ère lettre majuscule ou minuscule 
+
+                 
+
+            //Vider la grille
+            dgvProduit.Rows.Clear();
+          
+            
+            // ajouter listeRechercher dans la dgvClient
+            foreach (var l in listeRecherche)
+            {
+                cat = db.Categories.SingleOrDefault(s => s.ID_CATEGORIE == l.ID_CATEGORIE); // Affiche le nom de la catégorie
+                dgvProduit.Rows.Add(false, l.ID_PRODUIT, l.Nom_Produit, l.Quantite_Produit, l.Prix_Produit, cat.Nom_Categorie);
+
+            }
+
+
+
+        }
     }
 }
