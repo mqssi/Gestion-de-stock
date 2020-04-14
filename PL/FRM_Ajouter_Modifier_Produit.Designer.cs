@@ -354,7 +354,6 @@
         private System.Windows.Forms.Label label1;
         public System.Windows.Forms.Button btnActualiser;
         private System.Windows.Forms.Button btnEnregistrer;
-        private System.Windows.Forms.ComboBox comboCategorie;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel6;
         public System.Windows.Forms.TextBox txtNomProduit;
@@ -365,6 +364,7 @@
         private System.Windows.Forms.Panel panel7;
         public System.Windows.Forms.TextBox txtPrixProduit;
         private System.Windows.Forms.Button btnQuitter;
-        private System.Windows.Forms.PictureBox picProduit;
+        public System.Windows.Forms.ComboBox comboCategorie;
+        public System.Windows.Forms.PictureBox picProduit;
     }
 }

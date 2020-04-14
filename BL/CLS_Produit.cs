@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,6 +34,26 @@ namespace GestionDeStock.BL
             {
 
                 return false;
+            }
+
+
+        }
+
+        public void modifierProduit(int IdPR, string NomPR, int QuantitePR, string PrixPR, byte[] ImagePR, int IdcatergoriePR)
+        {
+            PR = new Produit();
+            PR = db.Produits.SingleOrDefault(s => s.ID_PRODUIT == IdPR); // si ID de produit = Mon ID
+            if(PR!=null)// si existe
+            {
+                PR.Nom_Produit = NomPR;
+                PR.Quantite_Produit = QuantitePR;
+                PR.Prix_Produit = PrixPR;
+                PR.Image_Produit = ImagePR;
+                PR.ID_CATEGORIE = IdcatergoriePR;
+                db.SaveChanges();
+
+
+
             }
 
 

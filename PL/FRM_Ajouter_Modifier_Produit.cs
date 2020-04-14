@@ -192,6 +192,7 @@ namespace GestionDeStock.PL
                 e.Handled = false;
             }
         }
+        public int IDPRODUIT;
 
         private void btnEnregistrer_Click(object sender, EventArgs e)
         {
@@ -225,6 +226,28 @@ namespace GestionDeStock.PL
 
                     }
 
+                }
+                else
+                {
+
+                    MemoryStream MR = new MemoryStream();
+                    picProduit.Image.Save(MR, picProduit.Image.RawFormat);
+                    byte[] byteimageP = MR.ToArray();
+                    BL.CLS_Produit clsProduit = new BL.CLS_Produit();
+                    DialogResult RS = MessageBox.Show("Voulez-vous vraiment modifier ce produit?", "Modification", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (RS == DialogResult.Yes)
+                    {
+                        clsProduit.modifierProduit(IDPRODUIT, txtNomProduit.Text, int.Parse(txtQuantiteProduit.Text), txtPrixProduit.Text, byteimageP, Convert.ToInt32(comboCategorie.SelectedValue));
+                        MessageBox.Show("Produit modifié avec succès", "Modification", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        (userProduit as USER_Liste_Produit).actualiserDgv();
+                        Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Modification annulée", "Modification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+
+                    }
                 }
             }
         }
