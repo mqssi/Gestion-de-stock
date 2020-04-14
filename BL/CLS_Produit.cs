@@ -59,5 +59,20 @@ namespace GestionDeStock.BL
 
         }
 
+
+        public void supprimerProduit(int id)
+        {
+
+            PR = new Produit();
+            PR = db.Produits.SingleOrDefault(s => s.ID_PRODUIT== id);
+            if (PR != null)
+            {
+
+                db.Produits.Remove(PR);
+                db.SaveChanges();
+            }
+
+        }
+
     }
 }

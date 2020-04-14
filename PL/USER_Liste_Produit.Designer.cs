@@ -192,6 +192,7 @@
             this.btnSuprimmerProduit.TabIndex = 11;
             this.btnSuprimmerProduit.Text = "Supprimer";
             this.btnSuprimmerProduit.UseVisualStyleBackColor = false;
+            this.btnSuprimmerProduit.Click += new System.EventHandler(this.btnSuprimmerProduit_Click);
             // 
             // btnModifierProduit
             // 

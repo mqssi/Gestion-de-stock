@@ -96,7 +96,7 @@ namespace GestionDeStock.PL
             if (nbLigneSelect == 0)
             {
 
-                return "Selectionner le produit à afficher.";
+                return "Selectionner Produit";
             }
 
             if (nbLigneSelect > 1)
@@ -108,12 +108,6 @@ namespace GestionDeStock.PL
 
 
         }
-
-
-
-
-
-
 
 
 
@@ -225,6 +219,56 @@ namespace GestionDeStock.PL
 
 
             }
+
+        }
+
+        private void btnSuprimmerProduit_Click(object sender, EventArgs e)
+        {
+            if(SelectVerif()=="Selectionner Produit")// vérifier si le produit est selectionné
+            {
+
+                MessageBox.Show(SelectVerif(), "Suppression", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+                DialogResult DR = MessageBox.Show("Voulez-vous vraiment supprimer", "Suppression", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (DR == DialogResult.Yes)
+                {
+
+
+                    //vérifier combien de ligne selectionner
+                    for (int i = 0; i < dgvProduit.Rows.Count; i++)
+                    {
+
+                        if ((bool)dgvProduit.Rows[i].Cells[0].Value == true)
+                        {
+
+                            BL.CLS_Produit clproduit = new BL.CLS_Produit();
+                            int idselect = (int)dgvProduit.Rows[i].Cells[1].Value;
+                            clproduit.supprimerProduit(idselect);
+                        }
+
+                    }
+                    //actualiser data
+                    actualiserDgv();
+                    MessageBox.Show("Produit supprimé avec succès", "Suppression", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+
+
+
+                }
+                else
+                {
+
+                    MessageBox.Show("Suppression annulée", "Suppression", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                }
+
+
+            }
+
+
 
         }
     }
