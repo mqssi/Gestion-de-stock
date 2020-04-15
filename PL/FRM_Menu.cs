@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -139,6 +140,26 @@ namespace GestionDeStock.PL
         private void btncommande_Click(object sender, EventArgs e)
         {
             pnlBut.Top = btncommande.Top;
+            pnlBut.Top = btncategorie.Top;
+            if(!pnlAfficher.Controls.Contains(USER_Liste_Commande.Instance))
+            {
+
+
+                pnlAfficher.Controls.Add(USER_Liste_Commande.Instance);
+                USER_Liste_Commande.Instance.Dock = DockStyle.Fill;
+                USER_Liste_Commande.Instance.BringToFront();
+
+            }
+            else
+            {
+
+                USER_Liste_Commande.Instance.BringToFront();
+
+            }
+
+
+
+
         }
 
         private void btnutilisateur_Click(object sender, EventArgs e)

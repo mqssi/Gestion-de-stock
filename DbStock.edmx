@@ -32,6 +32,9 @@
           <Property Name="ID_COMMANDE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Date_Commande" Type="datetime" Nullable="false" />
           <Property Name="ID_CLIENT" Type="int" Nullable="false" />
+          <Property Name="Total_HT" Type="nvarchar" MaxLength="250" />
+          <Property Name="TVA" Type="nvarchar" MaxLength="20" />
+          <Property Name="Total_TTC" Type="nvarchar" MaxLength="250" />
         </EntityType>
         <!--Erreurs détectées durant la génération :
 avertissement 6002: La table/vue 'GESTION_DE_STOCK.dbo.Details_Commande' n'a pas de clé primaire définie. La clé a été déduite et la définition a été créée en tant que table/vue en lecture seule.-->
@@ -206,6 +209,9 @@ avertissement 6002: La table/vue 'GESTION_DE_STOCK.dbo.Details_Commande' n'a pas
           <Property Name="ID_COMMANDE" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Date_Commande" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ID_CLIENT" Type="Int32" Nullable="false" />
+          <Property Name="Total_HT" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="TVA" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Total_TTC" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Client" Relationship="GESTION_DE_STOCKModel.FK_Commande_Client" FromRole="Commande" ToRole="Client" />
           <NavigationProperty Name="Details_Commande" Relationship="GESTION_DE_STOCKModel.FK_Details_Commande_Commande" FromRole="Commande" ToRole="Details_Commande" />
         </EntityType>
@@ -328,6 +334,9 @@ avertissement 6002: La table/vue 'GESTION_DE_STOCK.dbo.Details_Commande' n'a pas
           <EntitySetMapping Name="Commandes">
             <EntityTypeMapping TypeName="GESTION_DE_STOCKModel.Commande">
               <MappingFragment StoreEntitySet="Commande">
+                <ScalarProperty Name="Total_TTC" ColumnName="Total_TTC" />
+                <ScalarProperty Name="TVA" ColumnName="TVA" />
+                <ScalarProperty Name="Total_HT" ColumnName="Total_HT" />
                 <ScalarProperty Name="ID_CLIENT" ColumnName="ID_CLIENT" />
                 <ScalarProperty Name="Date_Commande" ColumnName="Date_Commande" />
                 <ScalarProperty Name="ID_COMMANDE" ColumnName="ID_COMMANDE" />
