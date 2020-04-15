@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using Microsoft.Reporting.WinForms;
 
 namespace GestionDeStock.PL
 {
@@ -296,6 +297,63 @@ namespace GestionDeStock.PL
             }
 
 
+
+        }
+
+        private void bntImprimer_Click(object sender, EventArgs e)
+        {
+            db = new dbStockContext();
+            int idselect = 0;
+            string Nomcategorie = null;
+
+            RAP.FRM_RAPPORT frmRprt = new RAP.FRM_RAPPORT();
+            Produit PR = new Produit();
+
+
+            if(SelectVerif()!= null)
+            {
+
+                MessageBox.Show(SelectVerif(), "Impression", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+
+                for(int i = 0; i < dgvProduit.Rows.Count; i++)
+                {
+
+                    if((bool)dgvProduit.Rows[i].Cells[0].Value == true) // si la ligne est cochée
+                    {
+
+                        idselect = (int)dgvProduit.Rows[i].Cells[1].Value; // id de ligne selectionné
+                        Nomcategorie = dgvProduit.Rows[i].Cells[5].Value.ToString(); //Nom catégorie
+                    }
+
+                }
+                ///////////////////////////////////////////////////////////////////
+                PR = db.Produits.SingleOrDefault(s => s.ID_PRODUIT == idselect);
+                if(PR!=null) // si le produit existe
+                {
+                    // donner le rapport
+                    frmRprt.RPAfficher.LocalReport.ReportEmbeddedResource = "GestionDeStock.RAP.RPT_Produit.rdlc";
+                    //using microsoft reporting windforms necessaire
+                    ReportParameter Pcategorie = new ReportParameter("RPCategorie", Nomcategorie); // nom categorie
+                    ReportParameter PNom = new ReportParameter("RPNom", PR.Nom_Produit); // nom categorie
+                    ReportParameter Pquantite = new ReportParameter("RPQuantite", PR.Quantite_Produit.ToString()); // nom categorie
+                    ReportParameter PPrix = new ReportParameter("RPPrix", PR.Prix_Produit); // nom categorie
+
+                    //Image, doit être covertie
+
+                    string ImageString = Convert.ToBase64String(PR.Image_Produit);
+                    ReportParameter Pimage = new ReportParameter("RPImage", ImageString);
+
+                    //Save les nouveaux paramettres dans le rapport
+                    frmRprt.RPAfficher.LocalReport.SetParameters(new ReportParameter[] { Pcategorie, PNom, Pquantite, PPrix, Pimage });
+                    frmRprt.RPAfficher.RefreshReport();
+                    frmRprt.ShowDialog(); // affiche formulaire de rapport
+
+                }
+            }
 
         }
     }
