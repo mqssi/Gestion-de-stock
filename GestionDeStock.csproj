@@ -202,6 +202,7 @@
     <EmbeddedResource Include="RAP\FRM_RAPPORT.resx">
       <DependentUpon>FRM_RAPPORT.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RAP\RPT_LISTE_PRODUIT.rdlc" />
     <EmbeddedResource Include="RAP\RPT_Produit.rdlc" />
     <EntityDeploy Include="DbStock.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

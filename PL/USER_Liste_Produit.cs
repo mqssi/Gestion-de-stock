@@ -356,5 +356,34 @@ namespace GestionDeStock.PL
             }
 
         }
+
+        private void btnImprimerTout_Click(object sender, EventArgs e)
+        {
+
+
+            RAP.FRM_RAPPORT frmRprt = new RAP.FRM_RAPPORT();
+            db = new dbStockContext();
+            try
+            {
+
+                var listeProduit = db.Produits.ToList();
+
+                frmRprt.RPAfficher.LocalReport.ReportEmbeddedResource = "GestionDeStock.RAP.RPT_LISTE_PRODUIT.rdlc";
+                frmRprt.RPAfficher.LocalReport.DataSources.Add(new ReportDataSource("databseproduit", listeProduit)); //list de produits
+                ReportParameter date = new ReportParameter("Date", DateTime.Now.ToString()); //date systeme
+                frmRprt.RPAfficher.LocalReport.SetParameters(new ReportParameter[] { date });
+                frmRprt.RPAfficher.RefreshReport();
+                frmRprt.ShowDialog();
+
+
+            }
+            catch(Exception EX)
+            {
+
+                MessageBox.Show(EX.Message);
+
+            }
+
+        }
     }
 }
