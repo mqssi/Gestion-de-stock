@@ -73,7 +73,7 @@ namespace GestionDeStock.PL
                     else
                     {
 
-                        MessageBox.Show("Catéegorie ajoutée avec succès", "Ajouter categorie", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        MessageBox.Show("Catégorie ajoutée avec succès", "Ajouter categorie", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                         (usercat as USER_Liste_Categorie).remplirDataGrid();
                     }
 

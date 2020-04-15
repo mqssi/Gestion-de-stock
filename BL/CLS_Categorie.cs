@@ -41,13 +41,25 @@ namespace GestionDeStock.BL
                 cat.Nom_Categorie = nomCat;
                 db.SaveChanges();
 
-
             }
 
-
-
-
         }
+
+
+        public void Supprimer_Categorie(int idCat)
+        {
+
+            cat = new Categorie();
+            cat = db.Categories.SingleOrDefault(s => s.ID_CATEGORIE == idCat);
+            if (cat != null)
+            {
+
+                db.Categories.Remove(cat);
+                db.SaveChanges();
+
+            }
+        }
+
 
     }
 }

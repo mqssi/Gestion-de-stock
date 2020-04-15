@@ -104,6 +104,57 @@ namespace GestionDeStock.PL
 
             }
 
+            // delete categorie
+
+            if (dgvCategorie.Columns[e.ColumnIndex].Name == "Supprimer")
+            {
+
+                BL.CLS_Categorie clsCat = new BL.CLS_Categorie();
+                DialogResult PR = MessageBox.Show("Voulez vous vraiment supprimer la Catégorie?", "Suppresion", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if(PR == DialogResult.Yes)
+                {
+                    //Verfi si il y a le produit dans cette catégorie
+                    int idcat = (int)dgvCategorie.Rows[e.RowIndex].Cells[1].Value;
+                    int P = db.Produits.Count(s => s.ID_CATEGORIE == idcat); //count cb de produit dans catégorie
+                    if (P == 0)
+                    {
+
+                        clsCat.Supprimer_Categorie(idcat);
+                        remplirDataGrid();
+                        MessageBox.Show("Catégorie supprimée avec succèes", "Suppresion", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                        
+                    }
+                    else
+                    {
+
+                        DialogResult PDP = MessageBox.Show("Il y a " + P + " Produits dans cette catégorie, voulez vous vraiment la supprimer", "Supression", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        if(PDP == DialogResult.Yes)
+                        {
+                            clsCat.Supprimer_Categorie(idcat);
+                            remplirDataGrid();
+                            MessageBox.Show("Catégorie supprimée avec succèes", "Suppresion", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+                        }
+                        else
+                        {
+
+                            MessageBox.Show("Suppresion annulée", "Suppresion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                        }
+                    }
+
+
+                }
+                else
+                {
+                    MessageBox.Show("Suppresion annulée", "Suppresion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+
+                }
+
+
+            }
+
 
 
         }
