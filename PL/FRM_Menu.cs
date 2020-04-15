@@ -119,6 +119,20 @@ namespace GestionDeStock.PL
         private void btncategorie_Click(object sender, EventArgs e)
         {
             pnlBut.Top = btncategorie.Top;
+            if(!pnlAfficher.Controls.Contains(USER_Liste_Categorie.Instance))
+            {
+
+                pnlAfficher.Controls.Add(USER_Liste_Categorie.Instance);
+                USER_Liste_Categorie.Instance.Dock = DockStyle.Fill;
+                USER_Liste_Categorie.Instance.BringToFront();
+            }
+            else
+            {
+                USER_Liste_Categorie.Instance.BringToFront();
+
+            }
+
+
         }
 
 

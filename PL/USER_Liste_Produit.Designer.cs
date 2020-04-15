@@ -48,6 +48,7 @@
             this.btnExcel = new System.Windows.Forms.Button();
             this.btnImprimerTout = new System.Windows.Forms.Button();
             this.bntImprimer = new System.Windows.Forms.Button();
+            this.bntActualiser = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduit)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,7 +121,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.panel3.Location = new System.Drawing.Point(344, 144);
+            this.panel3.Location = new System.Drawing.Point(79, 149);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(849, 2);
             this.panel3.TabIndex = 15;
@@ -131,7 +132,7 @@
             this.txtRechercher.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtRechercher.Font = new System.Drawing.Font("Montserrat", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRechercher.ForeColor = System.Drawing.Color.DimGray;
-            this.txtRechercher.Location = new System.Drawing.Point(344, 107);
+            this.txtRechercher.Location = new System.Drawing.Point(79, 112);
             this.txtRechercher.Multiline = true;
             this.txtRechercher.Name = "txtRechercher";
             this.txtRechercher.Size = new System.Drawing.Size(879, 39);
@@ -286,10 +287,29 @@
             this.bntImprimer.UseVisualStyleBackColor = false;
             this.bntImprimer.Click += new System.EventHandler(this.bntImprimer_Click);
             // 
+            // bntActualiser
+            // 
+            this.bntActualiser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bntActualiser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.bntActualiser.FlatAppearance.BorderSize = 0;
+            this.bntActualiser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bntActualiser.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntActualiser.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bntActualiser.Image = global::GestionDeStock.Properties.Resources.Refresh_icon;
+            this.bntActualiser.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bntActualiser.Location = new System.Drawing.Point(1058, 112);
+            this.bntActualiser.Name = "bntActualiser";
+            this.bntActualiser.Size = new System.Drawing.Size(259, 52);
+            this.bntActualiser.TabIndex = 22;
+            this.bntActualiser.Text = "Actualiser";
+            this.bntActualiser.UseVisualStyleBackColor = false;
+            this.bntActualiser.Click += new System.EventHandler(this.bntActualiser_Click);
+            // 
             // USER_Liste_Produit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.bntActualiser);
             this.Controls.Add(this.btnExcel);
             this.Controls.Add(this.btnImprimerTout);
             this.Controls.Add(this.bntImprimer);
@@ -331,5 +351,6 @@
         private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.Button btnImprimerTout;
         private System.Windows.Forms.Button bntImprimer;
+        private System.Windows.Forms.Button bntActualiser;
     }
 }

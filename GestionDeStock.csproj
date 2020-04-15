@@ -85,6 +85,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BL\CLS_Categorie.cs" />
     <Compile Include="BL\CLS_Client.cs" />
     <Compile Include="BL\CLS_Connexion.cs" />
     <Compile Include="BL\CLS_Produit.cs" />
@@ -114,6 +115,12 @@
     </Compile>
     <Compile Include="Details_Commande.cs">
       <DependentUpon>DbStock.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PL\FRM_Ajouter_Modifier_Categorie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Ajouter_Modifier_Categorie.Designer.cs">
+      <DependentUpon>FRM_Ajouter_Modifier_Categorie.cs</DependentUpon>
     </Compile>
     <Compile Include="PL\FRM_Ajouter_Modifier_Produit.cs">
       <SubType>Form</SubType>
@@ -145,6 +152,12 @@
     <Compile Include="PL\FRM_Photo_Produit.Designer.cs">
       <DependentUpon>FRM_Photo_Produit.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\USER_Liste_Categorie.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PL\USER_Liste_Categorie.Designer.cs">
+      <DependentUpon>USER_Liste_Categorie.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\USER_Liste_Client.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -172,6 +185,9 @@
     <Compile Include="Utilisateur.cs">
       <DependentUpon>DbStock.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="PL\FRM_Ajouter_Modifier_Categorie.resx">
+      <DependentUpon>FRM_Ajouter_Modifier_Categorie.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Ajouter_Modifier_Produit.resx">
       <DependentUpon>FRM_Ajouter_Modifier_Produit.cs</DependentUpon>
     </EmbeddedResource>
@@ -186,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Photo_Produit.resx">
       <DependentUpon>FRM_Photo_Produit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\USER_Liste_Categorie.resx">
+      <DependentUpon>USER_Liste_Categorie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\USER_Liste_Client.resx">
       <DependentUpon>USER_Liste_Client.cs</DependentUpon>

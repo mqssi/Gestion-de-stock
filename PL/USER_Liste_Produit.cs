@@ -435,5 +435,10 @@ namespace GestionDeStock.PL
 
 
         }
+
+        private void bntActualiser_Click(object sender, EventArgs e)
+        {
+            actualiserDgv();
+        }
     }
 }
