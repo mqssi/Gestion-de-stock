@@ -74,6 +74,28 @@ namespace GestionDeStock.PL
 
             }
 
+            for(int i = 0; i<dgvProduit.Rows.Count; i++)
+            {
+                if((int)dgvProduit.Rows[i].Cells[3].Value == 0)
+                {
+                    dgvProduit.Rows[i].Cells[3].Style.BackColor = Color.Red;
+
+
+                }
+                else
+                {
+                    dgvProduit.Rows[i].Cells[3].Style.BackColor = Color.LightBlue;
+
+
+                } 
+                
+
+
+            }
+
+
+
+
 
         }
 

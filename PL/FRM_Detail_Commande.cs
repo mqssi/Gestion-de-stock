@@ -37,6 +37,28 @@ namespace GestionDeStock.PL
             }
 
 
+            for (int i = 0; i < dgvProduit.Rows.Count; i++)
+            {
+                if ((int)dgvProduit.Rows[i].Cells[2].Value == 0)
+                {
+                    dgvProduit.Rows[i].Cells[2].Style.BackColor = Color.Red;
+
+
+                }
+                else
+                {
+                    dgvProduit.Rows[i].Cells[2].Style.BackColor = Color.LightBlue;
+
+
+                }
+
+
+
+            }
+
+            dgvProduit.ClearSelection();
+
+
         }
 
 
@@ -91,6 +113,40 @@ namespace GestionDeStock.PL
         {
             PL.FRM_Client_Commande frmC = new PL.FRM_Client_Commande();
             frmC.ShowDialog();
+
+            txtNomC.Text = frmC.dgvClient.CurrentRow.Cells[1].Value.ToString();
+            txtPrenomC.Text = frmC.dgvClient.CurrentRow.Cells[2].Value.ToString();
+            txtTelephoneC.Text = frmC.dgvClient.CurrentRow.Cells[4].Value.ToString();
+            txtMailC.Text = frmC.dgvClient.CurrentRow.Cells[5].Value.ToString();
+            txtPaysC.Text = frmC.dgvClient.CurrentRow.Cells[6].Value.ToString();
+            txtVilleC.Text = frmC.dgvClient.CurrentRow.Cells[7].Value.ToString();
+
+        }
+
+        private void dgvProduit_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            FRM_Produit_Commande frmp = new FRM_Produit_Commande();
+            
+            
+            if((int)dgvProduit.CurrentRow.Cells[2].Value == 0)
+            {
+
+                MessageBox.Show("Stock vide", "Stock", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            else
+            {
+
+                frmp.lblNom.Text = dgvProduit.CurrentRow.Cells[1].Value.ToString();
+                frmp.lblStock.Text = dgvProduit.CurrentRow.Cells[2].Value.ToString();
+                frmp.lblPrix.Text = dgvProduit.CurrentRow.Cells[3].Value.ToString();
+                frmp.txtTotal.Text = dgvProduit.CurrentRow.Cells[3].Value.ToString();
+                frmp.ShowDialog();
+
+            }
+            
+            
+            
         }
     }
 }

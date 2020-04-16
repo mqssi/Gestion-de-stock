@@ -140,7 +140,6 @@ namespace GestionDeStock.PL
         private void btncommande_Click(object sender, EventArgs e)
         {
             pnlBut.Top = btncommande.Top;
-            pnlBut.Top = btncategorie.Top;
             if(!pnlAfficher.Controls.Contains(USER_Liste_Commande.Instance))
             {
 
