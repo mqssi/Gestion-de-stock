@@ -45,11 +45,12 @@ namespace GestionDeStock.PL
             InitializeComponent();
         }
 
+        private void bntAjoutclient_Click(object sender, EventArgs e)
+        {
+            PL.FRM_Detail_Commande frmC = new PL.FRM_Detail_Commande();
+            frmC.ShowDialog();
 
 
-
-
-
-
+        }
     }
 }

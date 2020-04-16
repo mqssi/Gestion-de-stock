@@ -31,10 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvCategorie = new System.Windows.Forms.DataGridView();
-            this.btnImprimer = new System.Windows.Forms.Button();
-            this.bntAjoutclient = new System.Windows.Forms.Button();
-            this.lblDateDebut = new System.Windows.Forms.Label();
-            this.lblDateFin = new System.Windows.Forms.Label();
             this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,6 +38,10 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnImprimer = new System.Windows.Forms.Button();
+            this.bntAjoutclient = new System.Windows.Forms.Button();
+            this.lblDateDebut = new System.Windows.Forms.Label();
+            this.lblDateFin = new System.Windows.Forms.Label();
             this.btnChercher = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
@@ -85,63 +85,6 @@
             this.dgvCategorie.Size = new System.Drawing.Size(1171, 327);
             this.dgvCategorie.TabIndex = 29;
             // 
-            // btnImprimer
-            // 
-            this.btnImprimer.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnImprimer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.btnImprimer.FlatAppearance.BorderSize = 0;
-            this.btnImprimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImprimer.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImprimer.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnImprimer.Image = global::GestionDeStock.Properties.Resources.print_icon;
-            this.btnImprimer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImprimer.Location = new System.Drawing.Point(883, 571);
-            this.btnImprimer.Name = "btnImprimer";
-            this.btnImprimer.Size = new System.Drawing.Size(350, 48);
-            this.btnImprimer.TabIndex = 27;
-            this.btnImprimer.Text = "Imprimer";
-            this.btnImprimer.UseVisualStyleBackColor = false;
-            // 
-            // bntAjoutclient
-            // 
-            this.bntAjoutclient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.bntAjoutclient.FlatAppearance.BorderSize = 0;
-            this.bntAjoutclient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bntAjoutclient.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntAjoutclient.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.bntAjoutclient.Image = global::GestionDeStock.Properties.Resources.Actions_list_add_icon;
-            this.bntAjoutclient.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bntAjoutclient.Location = new System.Drawing.Point(62, 49);
-            this.bntAjoutclient.Name = "bntAjoutclient";
-            this.bntAjoutclient.Size = new System.Drawing.Size(198, 61);
-            this.bntAjoutclient.TabIndex = 24;
-            this.bntAjoutclient.Text = "Ajouter";
-            this.bntAjoutclient.UseVisualStyleBackColor = false;
-            // 
-            // lblDateDebut
-            // 
-            this.lblDateDebut.AutoSize = true;
-            this.lblDateDebut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblDateDebut.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateDebut.ForeColor = System.Drawing.Color.Green;
-            this.lblDateDebut.Location = new System.Drawing.Point(445, 65);
-            this.lblDateDebut.Name = "lblDateDebut";
-            this.lblDateDebut.Size = new System.Drawing.Size(169, 32);
-            this.lblDateDebut.TabIndex = 30;
-            this.lblDateDebut.Text = "Date début";
-            // 
-            // lblDateFin
-            // 
-            this.lblDateFin.AutoSize = true;
-            this.lblDateFin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lblDateFin.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateFin.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.lblDateFin.Location = new System.Drawing.Point(829, 65);
-            this.lblDateFin.Name = "lblDateFin";
-            this.lblDateFin.Size = new System.Drawing.Size(123, 32);
-            this.lblDateFin.TabIndex = 31;
-            this.lblDateFin.Text = "Date fin";
-            // 
             // Column1
             // 
             this.Column1.HeaderText = "Select";
@@ -177,6 +120,64 @@
             this.Column4.HeaderText = "TotalTTC";
             this.Column4.Name = "Column4";
             // 
+            // btnImprimer
+            // 
+            this.btnImprimer.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnImprimer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.btnImprimer.FlatAppearance.BorderSize = 0;
+            this.btnImprimer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimer.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimer.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnImprimer.Image = global::GestionDeStock.Properties.Resources.print_icon;
+            this.btnImprimer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImprimer.Location = new System.Drawing.Point(883, 571);
+            this.btnImprimer.Name = "btnImprimer";
+            this.btnImprimer.Size = new System.Drawing.Size(350, 48);
+            this.btnImprimer.TabIndex = 27;
+            this.btnImprimer.Text = "Imprimer";
+            this.btnImprimer.UseVisualStyleBackColor = false;
+            // 
+            // bntAjoutclient
+            // 
+            this.bntAjoutclient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            this.bntAjoutclient.FlatAppearance.BorderSize = 0;
+            this.bntAjoutclient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bntAjoutclient.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntAjoutclient.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.bntAjoutclient.Image = global::GestionDeStock.Properties.Resources.Actions_list_add_icon;
+            this.bntAjoutclient.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bntAjoutclient.Location = new System.Drawing.Point(62, 49);
+            this.bntAjoutclient.Name = "bntAjoutclient";
+            this.bntAjoutclient.Size = new System.Drawing.Size(198, 61);
+            this.bntAjoutclient.TabIndex = 24;
+            this.bntAjoutclient.Text = "Ajouter";
+            this.bntAjoutclient.UseVisualStyleBackColor = false;
+            this.bntAjoutclient.Click += new System.EventHandler(this.bntAjoutclient_Click);
+            // 
+            // lblDateDebut
+            // 
+            this.lblDateDebut.AutoSize = true;
+            this.lblDateDebut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblDateDebut.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateDebut.ForeColor = System.Drawing.Color.Green;
+            this.lblDateDebut.Location = new System.Drawing.Point(445, 65);
+            this.lblDateDebut.Name = "lblDateDebut";
+            this.lblDateDebut.Size = new System.Drawing.Size(169, 32);
+            this.lblDateDebut.TabIndex = 30;
+            this.lblDateDebut.Text = "Date début";
+            // 
+            // lblDateFin
+            // 
+            this.lblDateFin.AutoSize = true;
+            this.lblDateFin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblDateFin.Font = new System.Drawing.Font("Montserrat", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateFin.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.lblDateFin.Location = new System.Drawing.Point(829, 65);
+            this.lblDateFin.Name = "lblDateFin";
+            this.lblDateFin.Size = new System.Drawing.Size(123, 32);
+            this.lblDateFin.TabIndex = 31;
+            this.lblDateFin.Text = "Date fin";
+            // 
             // btnChercher
             // 
             this.btnChercher.BackColor = System.Drawing.SystemColors.Control;
@@ -185,7 +186,7 @@
             this.btnChercher.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChercher.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnChercher.Image = global::GestionDeStock.Properties.Resources.search;
-            this.btnChercher.Location = new System.Drawing.Point(1128, 51);
+            this.btnChercher.Location = new System.Drawing.Point(1183, 38);
             this.btnChercher.Name = "btnChercher";
             this.btnChercher.Size = new System.Drawing.Size(64, 72);
             this.btnChercher.TabIndex = 45;

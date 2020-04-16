@@ -134,6 +134,12 @@
     <Compile Include="PL\FRM_Ajout_Modifier_Client.Designer.cs">
       <DependentUpon>FRM_Ajout_Modifier_Client.cs</DependentUpon>
     </Compile>
+    <Compile Include="PL\FRM_Client_Commande.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PL\FRM_Client_Commande.Designer.cs">
+      <DependentUpon>FRM_Client_Commande.cs</DependentUpon>
+    </Compile>
     <Compile Include="PL\FRM_Connexion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Ajout_Modifier_Client.resx">
       <DependentUpon>FRM_Ajout_Modifier_Client.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PL\FRM_Client_Commande.resx">
+      <DependentUpon>FRM_Client_Commande.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PL\FRM_Connexion.resx">
       <DependentUpon>FRM_Connexion.cs</DependentUpon>
