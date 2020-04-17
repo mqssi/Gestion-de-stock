@@ -47,7 +47,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblVendreP = new System.Windows.Forms.Label();
             this.panel7.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -274,16 +274,16 @@
             this.label6.TabIndex = 72;
             this.label6.Text = "Stock";
             // 
-            // label4
+            // lblVendreP
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(16, 9);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(168, 25);
-            this.label4.TabIndex = 74;
-            this.label4.Text = "Vendre Produit";
+            this.lblVendreP.AutoSize = true;
+            this.lblVendreP.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVendreP.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblVendreP.Location = new System.Drawing.Point(16, 9);
+            this.lblVendreP.Name = "lblVendreP";
+            this.lblVendreP.Size = new System.Drawing.Size(168, 25);
+            this.lblVendreP.TabIndex = 74;
+            this.lblVendreP.Text = "Vendre Produit";
             // 
             // FRM_Produit_Commande
             // 
@@ -291,7 +291,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
             this.ClientSize = new System.Drawing.Size(742, 452);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblVendreP);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.btnEnregistrer);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -318,7 +318,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label9;
         public System.Windows.Forms.Label lblPrix;
         public System.Windows.Forms.Label lblStock;
@@ -329,5 +328,6 @@
         public System.Windows.Forms.TextBox txtTotal;
         public System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Label label11;
+        public System.Windows.Forms.Label lblVendreP;
     }
 }

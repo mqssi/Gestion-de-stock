@@ -164,5 +164,40 @@ namespace GestionDeStock.PL
             
             
         }
+
+        private void modifierToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRM_Produit_Commande frm = new FRM_Produit_Commande(this);
+            Produit PR = new Produit();
+            if (dgvDetailCommande.CurrentRow != null)
+            {
+                frm.lblVendreP.Text = "Modifier Produit";
+
+
+
+                frm.lblId.Text = dgvDetailCommande.CurrentRow.Cells[0].Value.ToString();
+                frm.lblNom.Text = dgvDetailCommande.CurrentRow.Cells[1].Value.ToString();
+               
+
+                int IDP = int.Parse(dgvDetailCommande.CurrentRow.Cells[0].Value.ToString());
+
+                PR = db.Produits.Single(s => s.ID_PRODUIT == IDP);
+                frm.lblStock.Text = PR.Quantite_Produit.ToString();
+
+
+                frm.lblPrix.Text = dgvDetailCommande.CurrentRow.Cells[3].Value.ToString();
+                frm.txtQuantite.Text = dgvDetailCommande.CurrentRow.Cells[2].Value.ToString();
+                frm.txtRemise.Text = dgvDetailCommande.CurrentRow.Cells[4].Value.ToString();
+                frm.txtTotal.Text = dgvDetailCommande.CurrentRow.Cells[5].Value.ToString();
+
+
+
+                frm.ShowDialog();
+
+            }
+
+
+
+        }
     }
 }

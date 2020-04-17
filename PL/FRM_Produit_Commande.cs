@@ -172,20 +172,45 @@ namespace GestionDeStock.PL
 
             };
             //ajout liste
-            
-            if(BL.D_Commande.ListeDetail.SingleOrDefault(s=>s.Id == DETAIL.Id)!=null)
+            if(lblVendreP.Text =="Vendre Produit")
             {
 
-                MessageBox.Show("Produit déja existant dans la commande", "Produit", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                if (BL.D_Commande.ListeDetail.SingleOrDefault(s => s.Id == DETAIL.Id) != null)
+                {
+
+                    MessageBox.Show("Produit déja existant dans la commande", "Produit", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+
+                }
+                else
+                {
+
+                    BL.D_Commande.ListeDetail.Add(DETAIL);
+
+                }
 
 
             }
             else
-            {
+            {//Modifier
+                DialogResult PR = MessageBox.Show("Voulez vous vraiment modifier?", "Modification", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if(PR==DialogResult.Yes)
+                {
+                    int index = BL.D_Commande.ListeDetail.FindIndex(s => s.Id == int.Parse(lblId.Text));
+                    BL.D_Commande.ListeDetail[index] = DETAIL;
+                    MessageBox.Show("Modification réalisée avec succès", "Modification", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    Close();
+                }
+                else
+                {
 
-                BL.D_Commande.ListeDetail.Add(DETAIL);
+                    MessageBox.Show("Modification annulée", "Modification", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+                }
 
             }
+
             
             
             //actualisation datagrid
