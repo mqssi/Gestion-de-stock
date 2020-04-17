@@ -143,6 +143,7 @@
             this.txtRemise.Name = "txtRemise";
             this.txtRemise.Size = new System.Drawing.Size(168, 31);
             this.txtRemise.TabIndex = 74;
+            this.txtRemise.TextChanged += new System.EventHandler(this.txtRemise_TextChanged);
             // 
             // txtQuantite
             // 
@@ -152,6 +153,7 @@
             this.txtQuantite.Name = "txtQuantite";
             this.txtQuantite.Size = new System.Drawing.Size(168, 31);
             this.txtQuantite.TabIndex = 72;
+            this.txtQuantite.TextChanged += new System.EventHandler(this.txtQuantite_TextChanged);
             this.txtQuantite.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantite_KeyPress);
             // 
             // label1
