@@ -12,6 +12,17 @@ namespace GestionDeStock.PL
 {
     public partial class FRM_Produit_Commande : Form
     {
+
+
+        public Form frmDetail;
+
+        public FRM_Produit_Commande(Form frm)
+        {
+            InitializeComponent();
+            frmDetail = frm;
+
+        }
+        
         public FRM_Produit_Commande()
         {
             InitializeComponent();
@@ -118,6 +129,68 @@ namespace GestionDeStock.PL
                 txtTotal.Text= (quantite * prix).ToString();
 
             }
+
+
+        }
+
+        private void btnEnregistrer_Click(object sender, EventArgs e)
+        {
+
+
+            int Quant, Re;
+            if (txtQuantite.Text != "")
+            {
+                Quant = int.Parse(txtQuantite.Text);
+
+            }
+            else
+            {
+                Quant = 1;
+
+            }
+            if(txtRemise.Text!="")
+            {
+
+                Re = int.Parse(txtRemise.Text);
+            }
+            else
+            {
+
+                Re = 0;
+            }
+
+
+
+            BL.D_Commande DETAIL = new BL.D_Commande
+            {
+                Id = int.Parse(lblId.Text),
+                Nom = lblNom.Text,
+                Quantite = Quant,
+                Prix = lblPrix.Text,
+                Remise = Re.ToString(),
+                Total = txtTotal.Text,
+
+            };
+            //ajout liste
+            
+            if(BL.D_Commande.ListeDetail.SingleOrDefault(s=>s.Id == DETAIL.Id)!=null)
+            {
+
+                MessageBox.Show("Produit déja existant dans la commande", "Produit", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+
+            }
+            else
+            {
+
+                BL.D_Commande.ListeDetail.Add(DETAIL);
+
+            }
+            
+            
+            //actualisation datagrid
+            (frmDetail as FRM_Detail_Commande).Actualiser_DetalCommande();
+
 
 
         }

@@ -24,6 +24,22 @@ namespace GestionDeStock.PL
             db = new dbStockContext();
         }
 
+        public void Actualiser_DetalCommande()
+        {
+            dgvDetailCommande.Rows.Clear();
+
+            foreach(var L in BL.D_Commande.ListeDetail)
+            {
+                dgvDetailCommande.Rows.Add(L.Id, L.Nom, L.Quantite, L.Prix, L.Remise, L.Total);
+
+
+            }
+
+
+        }
+
+
+
         public void remplir_dgvProduit()
         {
 
@@ -125,7 +141,7 @@ namespace GestionDeStock.PL
 
         private void dgvProduit_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            FRM_Produit_Commande frmp = new FRM_Produit_Commande();
+            FRM_Produit_Commande frmp = new FRM_Produit_Commande(this);
             
             
             if((int)dgvProduit.CurrentRow.Cells[2].Value == 0)
@@ -136,7 +152,7 @@ namespace GestionDeStock.PL
             }
             else
             {
-
+                frmp.lblId.Text = dgvProduit.CurrentRow.Cells[0].Value.ToString();
                 frmp.lblNom.Text = dgvProduit.CurrentRow.Cells[1].Value.ToString();
                 frmp.lblStock.Text = dgvProduit.CurrentRow.Cells[2].Value.ToString();
                 frmp.lblPrix.Text = dgvProduit.CurrentRow.Cells[3].Value.ToString();

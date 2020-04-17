@@ -63,7 +63,7 @@
             this.lblNom = new System.Windows.Forms.Label();
             this.lblClient = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.dgvCommande = new System.Windows.Forms.DataGridView();
+            this.dgvDetailCommande = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -85,7 +85,7 @@
             this.panel5.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCommande)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetailCommande)).BeginInit();
             this.SuspendLayout();
             // 
             // btnEnregistrer
@@ -333,6 +333,7 @@
             // txtPaysC
             // 
             this.txtPaysC.Enabled = false;
+            this.txtPaysC.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPaysC.Location = new System.Drawing.Point(372, 93);
             this.txtPaysC.Multiline = true;
             this.txtPaysC.Name = "txtPaysC";
@@ -427,7 +428,7 @@
             // panel8
             // 
             this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel8.Controls.Add(this.dgvCommande);
+            this.panel8.Controls.Add(this.dgvDetailCommande);
             this.panel8.Controls.Add(this.label10);
             this.panel8.Controls.Add(this.txtTotalTTC);
             this.panel8.Controls.Add(this.label9);
@@ -440,15 +441,15 @@
             this.panel8.Size = new System.Drawing.Size(788, 256);
             this.panel8.TabIndex = 71;
             // 
-            // dgvCommande
+            // dgvDetailCommande
             // 
-            this.dgvCommande.AllowUserToAddRows = false;
-            this.dgvCommande.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvDetailCommande.AllowUserToAddRows = false;
+            this.dgvDetailCommande.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvCommande.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvCommande.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvCommande.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvDetailCommande.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDetailCommande.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvDetailCommande.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -456,25 +457,25 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCommande.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvCommande.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCommande.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvDetailCommande.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvDetailCommande.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDetailCommande.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
             this.Column1,
             this.Column5});
-            this.dgvCommande.EnableHeadersVisualStyles = false;
-            this.dgvCommande.Location = new System.Drawing.Point(3, 16);
-            this.dgvCommande.Name = "dgvCommande";
-            this.dgvCommande.RowHeadersVisible = false;
-            this.dgvCommande.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvDetailCommande.EnableHeadersVisualStyles = false;
+            this.dgvDetailCommande.Location = new System.Drawing.Point(3, 16);
+            this.dgvDetailCommande.Name = "dgvDetailCommande";
+            this.dgvDetailCommande.RowHeadersVisible = false;
+            this.dgvDetailCommande.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvCommande.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvCommande.Size = new System.Drawing.Size(771, 168);
-            this.dgvCommande.TabIndex = 67;
+            this.dgvDetailCommande.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvDetailCommande.Size = new System.Drawing.Size(771, 168);
+            this.dgvDetailCommande.TabIndex = 67;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -651,7 +652,7 @@
             this.panel7.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCommande)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetailCommande)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -699,14 +700,14 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DataGridView dgvCommande;
+        private System.Windows.Forms.Button btnClient;
+        private System.Windows.Forms.DataGridView dgvProduit;
+        private System.Windows.Forms.DataGridView dgvDetailCommande;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.Button btnClient;
-        private System.Windows.Forms.DataGridView dgvProduit;
     }
 }

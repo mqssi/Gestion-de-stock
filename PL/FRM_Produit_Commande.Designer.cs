@@ -39,6 +39,8 @@
             this.txtQuantite = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblId = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.lblPrix = new System.Windows.Forms.Label();
             this.lblStock = new System.Windows.Forms.Label();
             this.lblNom = new System.Windows.Forms.Label();
@@ -63,6 +65,7 @@
             this.btnEnregistrer.TabIndex = 55;
             this.btnEnregistrer.Text = "Enregistrer";
             this.btnEnregistrer.UseVisualStyleBackColor = false;
+            this.btnEnregistrer.Click += new System.EventHandler(this.btnEnregistrer_Click);
             // 
             // panel7
             // 
@@ -170,6 +173,8 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.lblId);
+            this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.lblPrix);
             this.panel1.Controls.Add(this.lblStock);
             this.panel1.Controls.Add(this.lblNom);
@@ -181,12 +186,34 @@
             this.panel1.Size = new System.Drawing.Size(330, 251);
             this.panel1.TabIndex = 70;
             // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblId.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblId.Location = new System.Drawing.Point(179, 22);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(24, 25);
+            this.lblId.TabIndex = 79;
+            this.lblId.Text = "li";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Lime;
+            this.label11.Location = new System.Drawing.Point(31, 22);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(32, 25);
+            this.label11.TabIndex = 78;
+            this.label11.Text = "Id";
+            // 
             // lblPrix
             // 
             this.lblPrix.AutoSize = true;
             this.lblPrix.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPrix.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblPrix.Location = new System.Drawing.Point(179, 179);
+            this.lblPrix.Location = new System.Drawing.Point(186, 177);
             this.lblPrix.Name = "lblPrix";
             this.lblPrix.Size = new System.Drawing.Size(32, 25);
             this.lblPrix.TabIndex = 77;
@@ -197,7 +224,7 @@
             this.lblStock.AutoSize = true;
             this.lblStock.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStock.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblStock.Location = new System.Drawing.Point(179, 101);
+            this.lblStock.Location = new System.Drawing.Point(186, 125);
             this.lblStock.Name = "lblStock";
             this.lblStock.Size = new System.Drawing.Size(28, 25);
             this.lblStock.TabIndex = 76;
@@ -208,7 +235,7 @@
             this.lblNom.AutoSize = true;
             this.lblNom.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNom.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblNom.Location = new System.Drawing.Point(179, 34);
+            this.lblNom.Location = new System.Drawing.Point(179, 75);
             this.lblNom.Name = "lblNom";
             this.lblNom.Size = new System.Drawing.Size(32, 25);
             this.lblNom.TabIndex = 75;
@@ -219,7 +246,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Lime;
-            this.label8.Location = new System.Drawing.Point(24, 179);
+            this.label8.Location = new System.Drawing.Point(31, 177);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(52, 25);
             this.label8.TabIndex = 74;
@@ -230,7 +257,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Lime;
-            this.label7.Location = new System.Drawing.Point(31, 34);
+            this.label7.Location = new System.Drawing.Point(31, 75);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(64, 25);
             this.label7.TabIndex = 73;
@@ -241,7 +268,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Lime;
-            this.label6.Location = new System.Drawing.Point(24, 101);
+            this.label6.Location = new System.Drawing.Point(31, 125);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(71, 25);
             this.label6.TabIndex = 72;
@@ -300,5 +327,7 @@
         public System.Windows.Forms.Panel panel7;
         public System.Windows.Forms.TextBox txtRemise;
         public System.Windows.Forms.TextBox txtTotal;
+        public System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.Label label11;
     }
 }
