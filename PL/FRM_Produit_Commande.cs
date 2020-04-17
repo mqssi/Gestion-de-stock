@@ -205,7 +205,7 @@ namespace GestionDeStock.PL
                 else
                 {
 
-                    MessageBox.Show("Modification annulée", "Modification", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    MessageBox.Show("Modification annulée", "Modification", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                 }
 

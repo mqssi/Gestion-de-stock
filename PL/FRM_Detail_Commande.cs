@@ -199,5 +199,31 @@ namespace GestionDeStock.PL
 
 
         }
+
+        private void suprimmerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dgvDetailCommande.CurrentRow != null)
+            {
+                DialogResult PR = MessageBox.Show("Voulez vous vraiment supprimer?", "Supression", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (PR == DialogResult.Yes)
+                {
+
+
+                    int index = BL.D_Commande.ListeDetail.FindIndex(s => s.Id == int.Parse(dgvDetailCommande.CurrentRow.Cells[0].Value.ToString()));
+                    BL.D_Commande.ListeDetail.RemoveAt(index);
+                    Actualiser_DetalCommande();
+                    MessageBox.Show("Suppression réalisée avec succès", "Suppresion", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+
+                }
+                else
+                {
+
+                    MessageBox.Show("Suppresion annulée", "Suppression", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+
+
+        }
     }
 }

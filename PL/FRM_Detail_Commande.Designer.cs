@@ -639,13 +639,13 @@
             this.modifierToolStripMenuItem,
             this.suprimmerToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(130, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
             // 
             // modifierToolStripMenuItem
             // 
             this.modifierToolStripMenuItem.Image = global::GestionDeStock.Properties.Resources.k;
             this.modifierToolStripMenuItem.Name = "modifierToolStripMenuItem";
-            this.modifierToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.modifierToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.modifierToolStripMenuItem.Text = "Modifier";
             this.modifierToolStripMenuItem.Click += new System.EventHandler(this.modifierToolStripMenuItem_Click);
             // 
@@ -653,8 +653,9 @@
             // 
             this.suprimmerToolStripMenuItem.Image = global::GestionDeStock.Properties.Resources.Deconnecte;
             this.suprimmerToolStripMenuItem.Name = "suprimmerToolStripMenuItem";
-            this.suprimmerToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
+            this.suprimmerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.suprimmerToolStripMenuItem.Text = "Supprimer";
+            this.suprimmerToolStripMenuItem.Click += new System.EventHandler(this.suprimmerToolStripMenuItem_Click);
             // 
             // FRM_Detail_Commande
             // 
