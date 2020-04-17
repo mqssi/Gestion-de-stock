@@ -24,17 +24,31 @@ namespace GestionDeStock.PL
             db = new dbStockContext();
         }
 
-        public void Actualiser_DetalCommande()
+        public void Actualiser_DetailCommande()
         {
-            dgvDetailCommande.Rows.Clear();
 
+            float Totalht = 0, TVA = 0, Totalttc;
+
+            if (txtTva.Text != "")
+            {
+
+
+                TVA = float.Parse(txtTva.Text);
+            }
+            
+            
+            dgvDetailCommande.Rows.Clear();
             foreach(var L in BL.D_Commande.ListeDetail)
             {
                 dgvDetailCommande.Rows.Add(L.Id, L.Nom, L.Quantite, L.Prix, L.Remise, L.Total);
-
+                Totalht = Totalht + float.Parse(L.Total);
 
             }
-
+            txtTotalHT.Text = Totalht.ToString();
+            //Calcule TotalTTC
+            Totalttc = (Totalht + (Totalht * TVA / 100));
+            //Affiche Total TTC
+            txtTotalTTC.Text = Totalttc.ToString();
 
         }
 
@@ -211,7 +225,7 @@ namespace GestionDeStock.PL
 
                     int index = BL.D_Commande.ListeDetail.FindIndex(s => s.Id == int.Parse(dgvDetailCommande.CurrentRow.Cells[0].Value.ToString()));
                     BL.D_Commande.ListeDetail.RemoveAt(index);
-                    Actualiser_DetalCommande();
+                    Actualiser_DetailCommande();
                     MessageBox.Show("Suppression réalisée avec succès", "Suppresion", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
 
@@ -222,6 +236,16 @@ namespace GestionDeStock.PL
                     MessageBox.Show("Suppresion annulée", "Suppression", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
+
+
+        }
+
+        private void txtTva_TextChanged(object sender, EventArgs e)
+        {
+            //Calcule TTC
+
+
+            Actualiser_DetailCommande();
 
 
         }

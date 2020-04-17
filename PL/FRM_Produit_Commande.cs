@@ -214,7 +214,7 @@ namespace GestionDeStock.PL
             
             
             //actualisation datagrid
-            (frmDetail as FRM_Detail_Commande).Actualiser_DetalCommande();
+            (frmDetail as FRM_Detail_Commande).Actualiser_DetailCommande();
 
 
 
