@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,16 +13,17 @@ namespace GestionDeStock.PL
 {
     public partial class FRM_Detail_Commande : Form
     {
-
+        private UserControl userCommande;
         private dbStockContext db;
         
         
         
         
-        public FRM_Detail_Commande()
+        public FRM_Detail_Commande(UserControl user)
         {
             InitializeComponent();
             db = new dbStockContext();
+            userCommande = user;
         }
 
         public void Actualiser_DetailCommande()
@@ -284,6 +286,9 @@ namespace GestionDeStock.PL
 
 
                     }
+                    (userCommande as USER_Liste_Commande).RemplirData();
+                    BL.D_Commande.ListeDetail.Clear();
+                    Close();
 
                     MessageBox.Show("Commande ajouté avec succès", "Commande", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 

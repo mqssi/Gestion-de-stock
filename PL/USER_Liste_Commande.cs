@@ -43,14 +43,44 @@ namespace GestionDeStock.PL
         public USER_Liste_Commande()
         {
             InitializeComponent();
+            db = new dbStockContext();
         }
+
+        public void RemplirData()
+        {
+
+
+            dgvCommande.Rows.Clear();
+            Client c = new Client();
+            string NomPrenom;
+
+            foreach(var LC in db.Commandes)
+            {
+
+                c = db.Clients.Single(s => s.ID_CLIENT == LC.ID_CLIENT);
+                NomPrenom = c.Nom_Client + " " + c.Prenom_Client;
+                dgvCommande.Rows.Add(LC.ID_COMMANDE, LC.Date_Commande, NomPrenom, LC.Total_HT, LC.TVA, LC.Total_TTC);
+
+
+
+
+            }
+
+
+        }
+
 
         private void bntAjoutclient_Click(object sender, EventArgs e)
         {
-            PL.FRM_Detail_Commande frmC = new PL.FRM_Detail_Commande();
+            PL.FRM_Detail_Commande frmC = new PL.FRM_Detail_Commande(this);
             frmC.ShowDialog();
 
 
+        }
+
+        private void USER_Liste_Commande_Load(object sender, EventArgs e)
+        {
+            RemplirData();
         }
     }
 }

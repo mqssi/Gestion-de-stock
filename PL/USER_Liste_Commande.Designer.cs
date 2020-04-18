@@ -30,14 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dgvCategorie = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Client = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvCommande = new System.Windows.Forms.DataGridView();
             this.btnImprimer = new System.Windows.Forms.Button();
             this.bntAjoutclient = new System.Windows.Forms.Button();
             this.lblDateDebut = new System.Windows.Forms.Label();
@@ -45,18 +38,24 @@
             this.btnChercher = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCategorie)).BeginInit();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Client = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCommande)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgvCategorie
+            // dgvCommande
             // 
-            this.dgvCategorie.AllowUserToAddRows = false;
-            this.dgvCategorie.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvCommande.AllowUserToAddRows = false;
+            this.dgvCommande.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvCategorie.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvCategorie.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgvCategorie.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvCommande.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvCommande.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvCommande.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -64,61 +63,25 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCategorie.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvCategorie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCategorie.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
+            this.dgvCommande.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvCommande.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCommande.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column8,
             this.Date,
             this.Client,
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dgvCategorie.EnableHeadersVisualStyles = false;
-            this.dgvCategorie.Location = new System.Drawing.Point(62, 176);
-            this.dgvCategorie.Name = "dgvCategorie";
-            this.dgvCategorie.RowHeadersVisible = false;
-            this.dgvCategorie.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvCommande.EnableHeadersVisualStyles = false;
+            this.dgvCommande.Location = new System.Drawing.Point(62, 176);
+            this.dgvCommande.Name = "dgvCommande";
+            this.dgvCommande.RowHeadersVisible = false;
+            this.dgvCommande.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvCategorie.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvCategorie.Size = new System.Drawing.Size(1171, 327);
-            this.dgvCategorie.TabIndex = 29;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Select";
-            this.Column1.Name = "Column1";
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "ID";
-            this.Column8.Name = "Column8";
-            // 
-            // Date
-            // 
-            this.Date.HeaderText = "Date";
-            this.Date.Name = "Date";
-            // 
-            // Client
-            // 
-            this.Client.HeaderText = "Client";
-            this.Client.Name = "Client";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Total HT";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "TVA";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "TotalTTC";
-            this.Column4.Name = "Column4";
+            this.dgvCommande.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvCommande.Size = new System.Drawing.Size(1171, 327);
+            this.dgvCommande.TabIndex = 29;
             // 
             // btnImprimer
             // 
@@ -206,6 +169,36 @@
             this.dateTimePicker2.Size = new System.Drawing.Size(182, 20);
             this.dateTimePicker2.TabIndex = 47;
             // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "ID";
+            this.Column8.Name = "Column8";
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            // 
+            // Client
+            // 
+            this.Client.HeaderText = "Client";
+            this.Client.Name = "Client";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Total HT";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "TVA";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "TotalTTC";
+            this.Column4.Name = "Column4";
+            // 
             // USER_Liste_Commande
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -215,12 +208,13 @@
             this.Controls.Add(this.btnChercher);
             this.Controls.Add(this.lblDateFin);
             this.Controls.Add(this.lblDateDebut);
-            this.Controls.Add(this.dgvCategorie);
+            this.Controls.Add(this.dgvCommande);
             this.Controls.Add(this.btnImprimer);
             this.Controls.Add(this.bntAjoutclient);
             this.Name = "USER_Liste_Commande";
             this.Size = new System.Drawing.Size(1290, 706);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCategorie)).EndInit();
+            this.Load += new System.EventHandler(this.USER_Liste_Commande_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCommande)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,20 +222,19 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvCategorie;
+        private System.Windows.Forms.DataGridView dgvCommande;
         private System.Windows.Forms.Button btnImprimer;
         private System.Windows.Forms.Button bntAjoutclient;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column1;
+        private System.Windows.Forms.Label lblDateDebut;
+        private System.Windows.Forms.Label lblDateFin;
+        private System.Windows.Forms.Button btnChercher;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
         private System.Windows.Forms.DataGridViewTextBoxColumn Client;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.Label lblDateDebut;
-        private System.Windows.Forms.Label lblDateFin;
-        private System.Windows.Forms.Button btnChercher;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
     }
 }
