@@ -266,6 +266,7 @@ namespace GestionDeStock.PL
 
             }
             else
+
             {
                 if(txtNomC.Text =="")
                 {
