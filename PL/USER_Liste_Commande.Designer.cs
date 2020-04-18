@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvCommande = new System.Windows.Forms.DataGridView();
             this.btnImprimer = new System.Windows.Forms.Button();
             this.bntAjoutclient = new System.Windows.Forms.Button();
             this.lblDateDebut = new System.Windows.Forms.Label();
             this.lblDateFin = new System.Windows.Forms.Label();
             this.btnChercher = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateD = new System.Windows.Forms.DateTimePicker();
+            this.dateF = new System.Windows.Forms.DateTimePicker();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Client = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,14 +56,14 @@
             this.dgvCommande.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCommande.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvCommande.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCommande.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCommande.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCommande.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCommande.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column8,
@@ -77,9 +77,9 @@
             this.dgvCommande.Name = "dgvCommande";
             this.dgvCommande.RowHeadersVisible = false;
             this.dgvCommande.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvCommande.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvCommande.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCommande.Size = new System.Drawing.Size(1171, 327);
             this.dgvCommande.TabIndex = 29;
             // 
@@ -154,20 +154,21 @@
             this.btnChercher.Size = new System.Drawing.Size(64, 72);
             this.btnChercher.TabIndex = 45;
             this.btnChercher.UseVisualStyleBackColor = false;
+            this.btnChercher.Click += new System.EventHandler(this.btnChercher_Click);
             // 
-            // dateTimePicker1
+            // dateD
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(425, 100);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 46;
+            this.dateD.Location = new System.Drawing.Point(425, 100);
+            this.dateD.Name = "dateD";
+            this.dateD.Size = new System.Drawing.Size(200, 20);
+            this.dateD.TabIndex = 46;
             // 
-            // dateTimePicker2
+            // dateF
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(798, 100);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(182, 20);
-            this.dateTimePicker2.TabIndex = 47;
+            this.dateF.Location = new System.Drawing.Point(798, 100);
+            this.dateF.Name = "dateF";
+            this.dateF.Size = new System.Drawing.Size(182, 20);
+            this.dateF.TabIndex = 47;
             // 
             // Column8
             // 
@@ -203,8 +204,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dateF);
+            this.Controls.Add(this.dateD);
             this.Controls.Add(this.btnChercher);
             this.Controls.Add(this.lblDateFin);
             this.Controls.Add(this.lblDateDebut);
@@ -228,8 +229,8 @@
         private System.Windows.Forms.Label lblDateDebut;
         private System.Windows.Forms.Label lblDateFin;
         private System.Windows.Forms.Button btnChercher;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateD;
+        private System.Windows.Forms.DateTimePicker dateF;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
         private System.Windows.Forms.DataGridViewTextBoxColumn Client;

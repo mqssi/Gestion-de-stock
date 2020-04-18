@@ -82,5 +82,40 @@ namespace GestionDeStock.PL
         {
             RemplirData();
         }
+
+        private void btnChercher_Click(object sender, EventArgs e)
+        {
+
+            var listecommande = db.Commandes.ToList();
+            if (dgvCommande.Rows.Count != 0)
+            {
+
+                listecommande = listecommande.Where(s => s.Date_Commande.Date >= dateD.Value.Date && s.Date_Commande.Date <= dateF.Value.Date).ToList();
+
+
+                dgvCommande.Rows.Clear();
+                Client c = new Client();
+                string NomPrenom;
+
+                foreach (var LC in listecommande)
+                {
+
+                    c = db.Clients.Single(s => s.ID_CLIENT == LC.ID_CLIENT);
+                    NomPrenom = c.Nom_Client + " " + c.Prenom_Client;
+                    dgvCommande.Rows.Add(LC.ID_COMMANDE, LC.Date_Commande, NomPrenom, LC.Total_HT, LC.TVA, LC.Total_TTC);
+
+
+
+
+                }
+
+
+
+
+
+            }
+
+
+        }
     }
 }
