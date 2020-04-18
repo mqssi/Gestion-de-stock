@@ -96,6 +96,8 @@ namespace GestionDeStock.PL
         private void btnQuitter_Click(object sender, EventArgs e)
         {
             Close();
+            //Vider liste
+            BL.D_Commande.ListeDetail.Clear();
         }
 
         private void txtRechercher_Enter(object sender, EventArgs e)
@@ -144,6 +146,7 @@ namespace GestionDeStock.PL
             PL.FRM_Client_Commande frmC = new PL.FRM_Client_Commande();
             frmC.ShowDialog();
 
+            IDClient = (int)frmC.dgvClient.CurrentRow.Cells[0].Value;
             txtNomC.Text = frmC.dgvClient.CurrentRow.Cells[1].Value.ToString();
             txtPrenomC.Text = frmC.dgvClient.CurrentRow.Cells[2].Value.ToString();
             txtTelephoneC.Text = frmC.dgvClient.CurrentRow.Cells[4].Value.ToString();
@@ -246,6 +249,56 @@ namespace GestionDeStock.PL
 
 
             Actualiser_DetailCommande();
+
+
+        }
+
+        public int IDClient;
+
+        private void btnEnregistrer_Click(object sender, EventArgs e)
+        {
+
+            BL.CLS_Commande_DetailCommande clsCommande = new BL.CLS_Commande_DetailCommande();
+            if(dgvDetailCommande.Rows.Count == 0)
+            {
+                MessageBox.Show("Ajouter des Produits", "Enregistrer", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+            }
+            else
+            {
+                if(txtNomC.Text =="")
+                {
+                    MessageBox.Show("Ajouter un Client", "Client", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                else
+                {
+                    //Enrgistrer commande
+                    clsCommande.Ajouter_Commande(commandeDate.Value, IDClient, txtTotalHT.Text, txtTva.Text, txtTotalTTC.Text);
+                    foreach(var LD in BL.D_Commande.ListeDetail)
+                    {
+
+                        clsCommande.Ajouter_Detail(LD.Id, LD.Nom, LD.Quantite, LD.Prix, LD.Remise, LD.Total);
+
+
+                    }
+
+                    MessageBox.Show("Commande ajouté avec succès", "Commande", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+                }
+
+
+
+
+
+            }
+
+
+
+
+
+
 
 
         }
