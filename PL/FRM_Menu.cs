@@ -103,6 +103,8 @@ namespace GestionDeStock.PL
 
         private void btnclient_Click(object sender, EventArgs e)
         {
+            
+
             pnlBut.Top = btnclient.Top;
             if (!pnlAfficher.Controls.Contains(USER_Liste_Client.Instance))
             {
@@ -176,6 +178,9 @@ namespace GestionDeStock.PL
         {
             FRM_Connexion frmC = new FRM_Connexion(this); //this = FRM_Menu
             frmC.ShowDialog();
+            
+
+
         }
 
         private void FRM_Menu_Load(object sender, EventArgs e)
@@ -188,6 +193,7 @@ namespace GestionDeStock.PL
         {
             desactiverForm();
         }
+
 
     }
 }

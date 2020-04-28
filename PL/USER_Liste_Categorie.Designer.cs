@@ -28,15 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bntAjoutclient = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtRechercher = new System.Windows.Forms.TextBox();
-            this.btnImprimerTout = new System.Windows.Forms.Button();
-            this.btnExcel = new System.Windows.Forms.Button();
             this.dgvCategorie = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -87,40 +85,6 @@
             this.txtRechercher.TextChanged += new System.EventHandler(this.txtRechercher_TextChanged);
             this.txtRechercher.Enter += new System.EventHandler(this.txtRechercher_Enter);
             // 
-            // btnImprimerTout
-            // 
-            this.btnImprimerTout.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnImprimerTout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.btnImprimerTout.FlatAppearance.BorderSize = 0;
-            this.btnImprimerTout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImprimerTout.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnImprimerTout.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnImprimerTout.Image = global::GestionDeStock.Properties.Resources.print_icon;
-            this.btnImprimerTout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImprimerTout.Location = new System.Drawing.Point(216, 542);
-            this.btnImprimerTout.Name = "btnImprimerTout";
-            this.btnImprimerTout.Size = new System.Drawing.Size(350, 48);
-            this.btnImprimerTout.TabIndex = 21;
-            this.btnImprimerTout.Text = "Tout imprimer";
-            this.btnImprimerTout.UseVisualStyleBackColor = false;
-            // 
-            // btnExcel
-            // 
-            this.btnExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExcel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            this.btnExcel.FlatAppearance.BorderSize = 0;
-            this.btnExcel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcel.Font = new System.Drawing.Font("Montserrat", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcel.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnExcel.Image = global::GestionDeStock.Properties.Resources.Excel_icon;
-            this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcel.Location = new System.Drawing.Point(899, 542);
-            this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(350, 48);
-            this.btnExcel.TabIndex = 22;
-            this.btnExcel.Text = "Sauvegarde Excel";
-            this.btnExcel.UseVisualStyleBackColor = false;
-            // 
             // dgvCategorie
             // 
             this.dgvCategorie.AllowUserToAddRows = false;
@@ -130,14 +94,14 @@
             this.dgvCategorie.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCategorie.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dgvCategorie.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCategorie.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(28)))), ((int)(((byte)(38)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCategorie.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCategorie.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCategorie.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -150,9 +114,9 @@
             this.dgvCategorie.Name = "dgvCategorie";
             this.dgvCategorie.RowHeadersVisible = false;
             this.dgvCategorie.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvCategorie.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvCategorie.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvCategorie.Size = new System.Drawing.Size(1405, 327);
             this.dgvCategorie.TabIndex = 23;
             this.dgvCategorie.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategorie_CellContentClick);
@@ -174,10 +138,10 @@
             // 
             // Modifier
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Lime;
-            this.Modifier.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Lime;
+            this.Modifier.DefaultCellStyle = dataGridViewCellStyle2;
             this.Modifier.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Modifier.HeaderText = "Modifier";
             this.Modifier.Name = "Modifier";
@@ -186,10 +150,10 @@
             // 
             // Supprimer
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Red;
-            this.Supprimer.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Silver;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Red;
+            this.Supprimer.DefaultCellStyle = dataGridViewCellStyle3;
             this.Supprimer.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.Supprimer.HeaderText = "Supprimer";
             this.Supprimer.Name = "Supprimer";
@@ -201,8 +165,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dgvCategorie);
-            this.Controls.Add(this.btnExcel);
-            this.Controls.Add(this.btnImprimerTout);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.txtRechercher);
             this.Controls.Add(this.bntAjoutclient);
@@ -220,8 +182,6 @@
         private System.Windows.Forms.Button bntAjoutclient;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox txtRechercher;
-        private System.Windows.Forms.Button btnImprimerTout;
-        private System.Windows.Forms.Button btnExcel;
         private System.Windows.Forms.DataGridView dgvCategorie;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;

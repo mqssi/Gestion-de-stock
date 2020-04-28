@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRM_Menu));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlBut = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
@@ -71,7 +72,7 @@
             // pnlBut
             // 
             this.pnlBut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(200)))));
-            this.pnlBut.Location = new System.Drawing.Point(0, 77);
+            this.pnlBut.Location = new System.Drawing.Point(3, 77);
             this.pnlBut.Name = "pnlBut";
             this.pnlBut.Size = new System.Drawing.Size(10, 47);
             this.pnlBut.TabIndex = 4;
@@ -205,7 +206,7 @@
             this.pnlParamettrer.Controls.Add(this.btnconnecter);
             this.pnlParamettrer.Location = new System.Drawing.Point(56, 0);
             this.pnlParamettrer.Name = "pnlParamettrer";
-            this.pnlParamettrer.Size = new System.Drawing.Size(314, 38);
+            this.pnlParamettrer.Size = new System.Drawing.Size(314, 263);
             this.pnlParamettrer.TabIndex = 9;
             // 
             // btndeconnecter
@@ -221,7 +222,7 @@
             this.btndeconnecter.Name = "btndeconnecter";
             this.btndeconnecter.Size = new System.Drawing.Size(303, 58);
             this.btndeconnecter.TabIndex = 3;
-            this.btndeconnecter.Text = "Déconnecter";
+            this.btndeconnecter.Text = "Se Déconnecter";
             this.btndeconnecter.UseVisualStyleBackColor = true;
             this.btndeconnecter.Click += new System.EventHandler(this.btndeconnecter_Click);
             // 
@@ -270,7 +271,7 @@
             this.btnconnecter.Name = "btnconnecter";
             this.btnconnecter.Size = new System.Drawing.Size(303, 58);
             this.btnconnecter.TabIndex = 0;
-            this.btnconnecter.Text = "Connecter";
+            this.btnconnecter.Text = "Se Connecter";
             this.btnconnecter.UseVisualStyleBackColor = true;
             this.btnconnecter.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -332,6 +333,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FRM_Menu";
             this.Text = "FRM_Menu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

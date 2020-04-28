@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace GestionDeStock.BL
 {
     class CLS_Categorie
